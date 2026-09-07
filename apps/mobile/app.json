@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Nexo ERP",
+    "slug": "nexo-erp-mobile",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ethanrimes.nexo",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Escanear c\u00f3digos de barras para buscar y vender productos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#087f73",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ethanrimes.nexo"
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permite a Nexo escanear c\u00f3digos de barras.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ]
+    ],
+    "scheme": "nexo"
+  }
+}
