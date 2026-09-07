@@ -1,5 +1,7 @@
 # Nexo ERP
 
+[Open the private web app](https://nexo-erp-colombia.sergiow.chatgpt.site).
+
 An operational ERP for Colombian retail and wholesale businesses, with a Spanish web app and native iOS/Android apps. Money is stored in integer COP cents; business dates use `America/Bogota`.
 
 ## Included

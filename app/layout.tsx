@@ -5,7 +5,7 @@ import ERP from "./components/erp";
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://nexo-erp-colombia.mythic-lemon-5739.chatgpt.site",
+    "https://nexo-erp-colombia.sergiow.chatgpt.site",
   ),
   icons: { icon: "/favicon.ico", apple: "/icon-192.png" },
   applicationName: "Nexo ERP",
