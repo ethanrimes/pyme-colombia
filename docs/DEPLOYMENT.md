@@ -41,7 +41,7 @@ This path creates infrastructure in your own Cloudflare account and can receive 
    npx wrangler deploy --config .deployment-config.json
    ```
 
-5. Open the deployed URL and choose **Conectar con clave**. Enter the admin access key. Nexo creates an empty business on first authenticated access. The web session uses an HttpOnly, SameSite=Strict cookie lasting eight hours. Authorize phones from **Configuración**, then configure provider webhooks against this same HTTPS origin.
+5. Open the deployed URL and choose **Conectar con clave**. Enter the admin access key. Abastelo creates an empty business on first authenticated access. The web session uses an HttpOnly, SameSite=Strict cookie lasting eight hours. Authorize phones from **Configuración**, then configure provider webhooks against this same HTTPS origin.
 
 The standalone bootstrap admin key selects one organization. The demo/live selector cannot change the organization attached to an API/device key. Rotate the admin key by replacing its hash. Device keys can be individually revoked. Take care to back up the encryption key before rotating it: existing encrypted integration configurations require the old key until re-encrypted.
 

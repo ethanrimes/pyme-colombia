@@ -145,7 +145,7 @@ const tabs = [
 ];
 const makeKey = () =>
   String(Date.now()) + "-" + Math.random().toString(36).slice(2);
-function Nexo() {
+function Abastelo() {
   const scanLock = useRef(false);
   const [credentials, setCredentials] = useState<Credentials | null>(null),
     [url, setUrl] = useState(process.env.EXPO_PUBLIC_API_URL || ""),
@@ -376,7 +376,7 @@ function Nexo() {
         >
           <ScrollView contentContainerStyle={s.login}>
             <Text style={s.brand}>
-              nexo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
+              abastelo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
             </Text>
             <Text style={s.title}>Conectar negocio</Text>
             <Text style={s.body}>
@@ -419,10 +419,10 @@ function Nexo() {
       <View style={s.header}>
         <View>
           <Text style={s.brandSmall}>
-            nexo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
+            abastelo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
           </Text>
           <Text style={s.small}>
-            {data?.org.name || "Nexo ERP"}
+            {data?.org.name || "Abastelo ERP"}
             {data?.org.demo ? " · Demo" : ""}
           </Text>
         </View>
@@ -1297,7 +1297,7 @@ function Nexo() {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Nexo />
+      <Abastelo />
     </SafeAreaProvider>
   );
 }

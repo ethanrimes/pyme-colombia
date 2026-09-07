@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Nexo ERP",
-    short_name: "Nexo",
+    name: "Abastelo ERP",
+    short_name: "Abastelo",
     description: "Inventario, ventas y reportes.",
     start_url: "/",
     display: "standalone",

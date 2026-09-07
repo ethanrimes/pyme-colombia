@@ -1,6 +1,8 @@
-# Nexo ERP
+# Abastelo ERP
 
-[Open the private web app](https://nexo-erp-colombia.sergiow.chatgpt.site).
+[Open the private web app](https://abastelo-erp.sergiow.chatgpt.site).
+
+[Name research and availability checks](docs/NAME-RESEARCH.md).
 
 An operational ERP for Colombian retail and wholesale businesses, with a Spanish web app and native iOS/Android apps. Money is stored in integer COP cents; business dates use `America/Bogota`.
 
