@@ -2,7 +2,7 @@
 
 Checked September 7, 2026, 02:45 UTC (September 6 in Colombia).
 
-Selected name: **Abastelo ERP**. The name refers to *abasto* and *abastecer*, which fit retail and wholesale operations. Use the name without a tagline.
+Selected display name: **Abástelo ERP**. URLs and package identifiers use `abastelo`. The name refers to *abasto* and *abastecer*, which fit retail and wholesale operations. Use the name without a tagline.
 
 ## Why Nexo was replaced
 
@@ -27,4 +27,4 @@ This is preliminary naming research, not proof of worldwide exclusivity or trade
 
 ## Compatibility
 
-Visible branding, app display names, icons, package labels and export filenames use Abastelo. Existing native bundle IDs, device storage keys, cookies, API headers and deployment resource identifiers remain stable so the rename does not disconnect installed clients or select a different business database. The GitHub repository remains `ethanrimes/pyme-colombia`.
+Visible branding and app display names use Abástelo. Package labels and export filenames use the ASCII spelling `abastelo`. Existing native bundle IDs, device storage keys, cookies, API headers and deployment resource identifiers remain stable so the rename does not disconnect installed clients or select a different business database. The GitHub repository remains `ethanrimes/pyme-colombia`.

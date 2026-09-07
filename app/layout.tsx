@@ -8,18 +8,18 @@ export const metadata: Metadata = {
     "https://abastelo-erp.sergiow.chatgpt.site",
   ),
   icons: { icon: "/favicon.ico", apple: "/icon-192.png" },
-  applicationName: "Abastelo ERP",
-  title: "Abastelo ERP",
+  applicationName: "Abástelo ERP",
+  title: "Abástelo ERP",
   description:
     "Inventario, ventas, compras y reportes para comercios minoristas y mayoristas de Colombia.",
   openGraph: {
-    title: "Abastelo ERP",
+    title: "Abástelo ERP",
     description:
       "Inventario, ventas y reportes para comercio minorista y mayorista.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abastelo ERP",
+    title: "Abástelo ERP",
     description: "El ERP para las PyMEs de Colombia.",
   },
 };
