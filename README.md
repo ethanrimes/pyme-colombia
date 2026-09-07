@@ -1,4 +1,4 @@
-# Abastelo ERP
+# Abástelo ERP
 
 [Open the private web app](https://abastelo-erp.sergiow.chatgpt.site).
 

@@ -376,7 +376,7 @@ function Abastelo() {
         >
           <ScrollView contentContainerStyle={s.login}>
             <Text style={s.brand}>
-              abastelo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
+              abástelo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
             </Text>
             <Text style={s.title}>Conectar negocio</Text>
             <Text style={s.body}>
@@ -419,10 +419,10 @@ function Abastelo() {
       <View style={s.header}>
         <View>
           <Text style={s.brandSmall}>
-            abastelo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
+            abástelo<Text style={{ color: teal, fontSize: 18 }}>●</Text>
           </Text>
           <Text style={s.small}>
-            {data?.org.name || "Abastelo ERP"}
+            {data?.org.name || "Abástelo ERP"}
             {data?.org.demo ? " · Demo" : ""}
           </Text>
         </View>
