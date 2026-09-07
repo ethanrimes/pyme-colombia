@@ -1,12 +1,13 @@
 -- Ledger writes and stock updates share the enclosing D1 transaction.
+-- Parenthesized CASE expressions keep hosted SQL splitters from treating CASE END as trigger END.
 CREATE TRIGGER movements_apply_stock AFTER INSERT ON movements BEGIN
-  SELECT CASE WHEN NOT EXISTS(SELECT 1 FROM products WHERE id=NEW.product_id AND org=NEW.org) OR NOT EXISTS(SELECT 1 FROM locations WHERE id=NEW.location_id AND org=NEW.org) THEN RAISE(ABORT,'Invalid inventory owner') END;
+  SELECT (CASE WHEN NOT EXISTS(SELECT 1 FROM products WHERE id=NEW.product_id AND org=NEW.org) OR NOT EXISTS(SELECT 1 FROM locations WHERE id=NEW.location_id AND org=NEW.org) THEN RAISE(ABORT,'Invalid inventory owner') END);
   INSERT INTO stock(org,product_id,location_id,quantity) VALUES(NEW.org,NEW.product_id,NEW.location_id,0) ON CONFLICT(product_id,location_id) DO NOTHING;
   UPDATE stock SET quantity=quantity+NEW.quantity WHERE product_id=NEW.product_id AND location_id=NEW.location_id AND org=NEW.org;
 END;
 --> statement-breakpoint
 CREATE TRIGGER sale_items_inventory AFTER INSERT ON sale_items BEGIN
-  SELECT CASE WHEN NOT EXISTS(SELECT 1 FROM sales WHERE id=NEW.sale_id AND org=NEW.org) THEN RAISE(ABORT,'Invalid sale owner') END;
+  SELECT (CASE WHEN NOT EXISTS(SELECT 1 FROM sales WHERE id=NEW.sale_id AND org=NEW.org) THEN RAISE(ABORT,'Invalid sale owner') END);
   INSERT INTO movements(id,org,product_id,location_id,quantity,unit_cost,kind,reference,note,created_at)
   SELECT NEW.id||'-sale',NEW.org,NEW.product_id,s.location_id,-NEW.quantity,NEW.unit_cost,'sale',s.id,'Venta '||s.number,s.created_at FROM sales s WHERE s.id=NEW.sale_id;
 END;
@@ -17,9 +18,9 @@ CREATE TRIGGER sales_return_inventory AFTER UPDATE OF status ON sales WHEN NEW.s
 END;
 --> statement-breakpoint
 CREATE TRIGGER payment_apply AFTER INSERT ON payments BEGIN
-  SELECT CASE WHEN (NEW.sale_id IS NULL)=(NEW.purchase_id IS NULL) THEN RAISE(ABORT,'Payment must have exactly one document') END;
-  SELECT CASE WHEN NEW.sale_id IS NOT NULL AND NOT EXISTS(SELECT 1 FROM sales WHERE id=NEW.sale_id AND org=NEW.org AND status!='voided') THEN RAISE(ABORT,'Invalid sale payment') END;
-  SELECT CASE WHEN NEW.purchase_id IS NOT NULL AND NOT EXISTS(SELECT 1 FROM purchases WHERE id=NEW.purchase_id AND org=NEW.org AND status='received') THEN RAISE(ABORT,'Invalid purchase payment') END;
+  SELECT (CASE WHEN (NEW.sale_id IS NULL)=(NEW.purchase_id IS NULL) THEN RAISE(ABORT,'Payment must have exactly one document') END);
+  SELECT (CASE WHEN NEW.sale_id IS NOT NULL AND NOT EXISTS(SELECT 1 FROM sales WHERE id=NEW.sale_id AND org=NEW.org AND status!='voided') THEN RAISE(ABORT,'Invalid sale payment') END);
+  SELECT (CASE WHEN NEW.purchase_id IS NOT NULL AND NOT EXISTS(SELECT 1 FROM purchases WHERE id=NEW.purchase_id AND org=NEW.org AND status='received') THEN RAISE(ABORT,'Invalid purchase payment') END);
   UPDATE sales SET paid=paid+NEW.amount WHERE id=NEW.sale_id AND org=NEW.org;
   UPDATE purchases SET paid=paid+NEW.amount WHERE id=NEW.purchase_id AND org=NEW.org;
 END;
