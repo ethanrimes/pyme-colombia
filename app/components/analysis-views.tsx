@@ -519,7 +519,7 @@ export function Reports({
         "Todos los registros del negocio. No incluye secretos de conexión.",
       action: () =>
         download(
-          "nexo-registros-" + end + ".json",
+          "abastelo-registros-" + end + ".json",
           JSON.stringify(data, null, 2),
           "application/json",
         ),

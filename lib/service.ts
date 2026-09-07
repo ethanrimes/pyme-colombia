@@ -356,7 +356,7 @@ export async function mutate(ctx: Context, path: string[], raw: any) {
     )
       throw new ApiError(
         409,
-        "Gestiona primero la nota crédito o el reembolso con el proveedor. No se puede anular desde Nexo.",
+        "Gestiona primero la nota crédito o el reembolso con el proveedor. No se puede anular desde Abastelo.",
       );
     if (raw.confirm !== true)
       throw new ApiError(

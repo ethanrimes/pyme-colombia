@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Nexo ERP",
-    "slug": "nexo-erp-mobile",
+    "name": "Abastelo ERP",
+    "slug": "abastelo-erp-mobile",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
@@ -29,7 +29,7 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Permite a Nexo escanear c\u00f3digos de barras.",
+          "cameraPermission": "Permite a Abastelo escanear c\u00f3digos de barras.",
           "microphonePermission": false,
           "recordAudioAndroid": false
         }

@@ -284,7 +284,7 @@ export default function ERP({ children }: { children: ReactNode }) {
           <div className="panel-content">
             <p>
               Autoriza cada teléfono desde aquí e ingresa la clave en la app
-              Nexo. Los dispositivos tienen acceso a este negocio y sus
+              Abastelo. Los dispositivos tienen acceso a este negocio y sus
               operaciones.
             </p>
             <button className="secondary" onClick={() => open("device")}>
@@ -353,7 +353,7 @@ export default function ERP({ children }: { children: ReactNode }) {
       <aside className={"sidebar " + (menu ? "mobile-open" : "")}>
         <div className="brand-row">
           <Link className="brand" href="/">
-            nexo<span>●</span>
+            abastelo<span>●</span>
           </Link>
           <button
             className="icon-button mobile-menu"
@@ -368,7 +368,7 @@ export default function ERP({ children }: { children: ReactNode }) {
             <Store size={19} />
           </span>
           <div>
-            <strong>{data?.org.name || "Nexo ERP"}</strong>
+            <strong>{data?.org.name || "Abastelo ERP"}</strong>
             <small>{space === "demo" ? "Demostración" : "Mi empresa"}</small>
           </div>
         </div>
